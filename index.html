@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="apple-touch-icon" sizes="180x180" href="MBC.jpeg">
 		<link rel="icon" type="image/png" sizes="32x32" href="MBC.png">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 		<script type="text/javascript" src="nodes.js"></script>
 		<script type="text/javascript" src="tApp.js"></script>
 		<style>
@@ -98,6 +97,14 @@
 				transition: transform 0.25s ease-in-out;
 				position: relative;
 			}
+			#middle {  
+                                width: max-content;
+                                max-width: calc(100% - 50px);
+                                height: calc(100vh - 250px);
+                                margin-top: 80px;
+                                transition: transform 0.25s ease-in-out;
+                                position: relative;
+                        }
 			#nodes {
 				position: absolute;
 				height: calc(100vh - 75px);
@@ -110,6 +117,12 @@
 				width: 100vw;
 				transform: translate(-50%, calc(-50% - 50px));
 			}
+			bottom-center {
+				position: absolute;
+                                top: 50%;
+                                width: 100vw;
+                                transform: translate(-50%, calc(-50% - 50px));
+                        }
 			.logo {
 				text-align: center;
 				width: 150px;
@@ -188,7 +201,7 @@
 			}
 			.container {
 				background-color: var(--color-lightgray);
-				width: calc(100% - 750px);
+				width: 50%;
 				min-height: 1440px;
 				margin: 10px;
 				padding: 10px;
@@ -203,46 +216,43 @@
 				transition: transform 0.25s ease-in-out,
 							box-shadow 0.25s ease-in-out;
 			}
-			.text-container {
-				position: absolute;
-				margin: 0;
-				width: calc(50vw - 200px);
-				background-color: var(--bg-color);
-				z-index: 2;
+			.text-image {
+				position: relative;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				height: 35%;
+				width: 80%;
 				padding: 20px;
 				box-sizing: border-box;
 				box-shadow: 0 0 25px 0 var(--color-black);
 			}
-			.text-container-right {
-				left: calc(50% + 100px);
-                                top: calc(100% + 300px);
-			}
-			.text-container-left {
-				left: calc(50% - 595px);
-				top: calc(100% + 1090px)
-			}	
-			.pic-left {
-				position: absolute;
-				height: 338px;
-				width: 572px;
-				left: 100px;
+			.pic-one {
+				position: relative;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				height: 40%;
+				width: 45%;
 				box-shadow: 0 0 25px 0 var(--shadow-color);
 				transition: transform 0.25s ease-in-out,
 							box-shadow 0.25s ease-in-out;	
-				top: calc(100% + 240px);
 			}
-			.pic-right {
-				position: absolute;
-				height: 338px;
-				width: 525px;
-                                right: 100px;
+			.pic-two {
+				position: relative;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				height: 40%;
+				width: 45%;
                                 box-shadow: 0 0 25px 0 var(--shadow-color);
                                 transition: transform 0.25s ease-in-out,
                                                         box-shadow 0.25s ease-in-out;
-                                top: calc(100% + 1000px);
 			}
-			.center {
-				height: 704px;
+			.seperator {
+				height: calc(100vh - 150px);
+				margin: auto;
+				width: 50%
 			}
 		</style>
 		<script>
@@ -379,30 +389,25 @@
 				</div>
 			</div>
 		</center>
-		<center class="center">
-			<div id="scrollpoint-about"></div>
+		<center>
+			<div class="seperator">
 				<h1 class="header hide-text" id="about">About</h1>
-				<img class="pic-left" src="Training.jpeg" type="image/jpeg"></img>
-				<p class="text-container text-container-right">We are a dedicated organization seeking to educate elementary and high school kids about the fundamentals of basketball. Our goal is to improve each and every one of our students' physical fitness and basketball ability. We hope that with our training, students will enjoy the sport of basketball as much as we do and achieve their goals, whether that be to improve their well-being or be on the school basketball team. Above all, we strive to create a comfortable environment and have fun!</p>
-				<br>
+				<img class="pic-one" src="Training.jpeg" type="image/jpeg"></img><br><br>
+				<img class="text-image" src="AboutText.png"</img><br><br>
 			</div>
 		</center>
-		<center class="center">
-		<div id="meet-the-team">
+		<center>
+		<div class="seperator" id="meet-the-team">
 			<h1>Meet the Team</h1>
-				<div id="products-container">
-					<h2 class="title">Founder and Lead Instructor - Lakshay Soin</h2>
-					<img class="pic-right" src="Lakshay.jpeg" type="image/jpeg"></img>
-					<p class="text-container text-container-left">Lakshay Soin is a 10th grader at Mission San Jose High School who is passionate about basketball and computer science. He has been playing competitive basketball since 1st grade and is currently on his school’s junior varsity basketball team. In his free time, Lakshay enjoys coding and playing basketball with his friends.</p>
-			</div>
+			<h2 class="title">Founder and Lead Instructor - Lakshay Soin</h2>
+			<img class="pic-two" src="Lakshay.jpeg" type="image/jpeg"></img><br><br>
+			<img class="text-image" src="TeamText.png"</img><br><br>
 		</div>
 		</center>
 		<center>
 			<div id="register">
-				<div id="scrollpoint-register">
 				<h1>Register</h2>
-				<iframe class="container" src="https://docs.google.com/forms/d/e/1FAIpQLScyghZnp0sLSdvgtO_Ed2MfUADF34aFudM8NphiLE9zGqWByA/viewform?embedded=true" width="640" height="1421" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-				</div>
+				<iframe class="container" src="https://docs.google.com/forms/d/e/1FAIpQLScyghZnp0sLSdvgtO_Ed2MfUADF34aFudM8NphiLE9zGqWByA/viewform?embedded=true" width="50%" height="75%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 			</div>		
 		</center>
 		<center><h1 class="header" id="scrollpoint-contact">Contact</h1></center>
@@ -631,3 +636,4 @@
 		</script>
 	</body>
 </html>
+
